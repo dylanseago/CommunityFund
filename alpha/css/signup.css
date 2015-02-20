@@ -1,0 +1,48 @@
+.project-div {
+	margin-left: 3%; 
+	margin-right: 3%;
+	width:200px; 
+	text-align: center;
+	display: inline-block;
+}
+
+.project-thumbnail {
+	border: 2px dashed black;
+}
+
+.heading {
+	padding-left: 30px;
+	padding-bottom: 20px;
+}
+
+.carousel-item {
+	padding-left: 10%; 
+	padding-right: 10%
+}
+#form {
+	width: 550px;
+	margin: auto;
+	border: 2px solid black; 
+	border-radius: 10px; 
+	padding: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#remember-me {
+	float: left;
+}
+
+#forgot-pwd {
+	float: right;
+}
+
+#user {
+	margin: 10px;
+}
+
+#footer {
+	background-color: #222; 
+	height: 100px; 
+	border-radius: 5px;
+}
