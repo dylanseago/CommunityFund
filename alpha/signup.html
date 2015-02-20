@@ -12,7 +12,7 @@
 
     <title>Community Fund - Sign Up</title>
 
-    <link rel="stylesheet" href="css/signup.css">
+    <!--link rel="stylesheet" href="css/signup.css"-->
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -49,71 +49,29 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-left">
                     <li>
                         <a href="about.html">About</a>
                     </li>
                     <li>
-                        <a href="services.html">Services</a>
+                        <a href="projects.html">Projects</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="communities.html">Communities</a>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="portfolio-1-col.html">1 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-2-col.html">2 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-3-col.html">3 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-4-col.html">4 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-item.html">Single Portfolio Item</a>
-                            </li>
-                        </ul>
+                    <li>
+                        <a href="signup.html">Get Started</a>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="blog-home-1.html">Blog Home 1</a>
-                            </li>
-                            <li>
-                                <a href="blog-home-2.html">Blog Home 2</a>
-                            </li>
-                            <li>
-                                <a href="blog-post.html">Blog Post</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li class="active">
-                                <a href="full-width.html">Full Width Page</a>
-                            </li>
-                            <li>
-                                <a href="sidebar.html">Sidebar Page</a>
-                            </li>
-                            <li>
-                                <a href="faq.html">FAQ</a>
-                            </li>
-                            <li>
-                                <a href="404.html">404</a>
-                            </li>
-                            <li>
-                                <a href="pricing.html">Pricing Table</a>
-                            </li>
-                        </ul>
+                    <li>
+                        <a href="login.html">Login</a>
                     </li>
                 </ul>
+				<form method="GET" class="navbar-form navbar-right" role="search">
+					<div class="form-group has-feedback">
+						<input name="q" type="search" class="form-control" placeholder="Projects, Communities..."/>
+						<i class="glyphicon glyphicon-search form-control-feedback"></i>
+					</div>
+				</form>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -122,50 +80,71 @@
 
     <!-- Page Content -->
     <div class="container">
-
-        <form class="form-horizontal" id="form">
-        <fieldset>
-            <legend>Sign Up</legend>
-            <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Name</label>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputEmail" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputEmail" style="cursor: auto; background-image: url(dta:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                <div class="col-lg-10">
-                    <input type="password" class="form-control" id="inputPassword" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputPassword" class="col-lg-2 control-label">Re-enter password</label>
-                <div class="col-lg-10">
-                    <input type="password" class="form-control" id="inputPassword" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
-                </div>
-            </div>
-
-        </fieldset>
-        <div align='center'>
-            <a href="#" class="btn btn-primary btn-lg">Sign me up!</a>
-        </div>
-        <hr/>
-        <div align='center' id="user"><a href="login.html">Have an account? Log in!</a></div>
-    </form>
-
+		<div class="row" style="margin-top: 20px">
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h1 class="panel-title">Sign Up</h1>
+					</div>
+					<div class="panel-body">
+						<form id="formSignUp" role="form">
+							<div class="row">
+								<div class="form-group col-sm-12 col-md-6">
+									<label for="inputFirstName" class="sr-only">First Name</label>
+									<input id="inputFirstName" class="form-control" name="firstName" placeholder="First Name" type="text" required>
+								</div>
+								<div class="form-group col-sm-12 col-md-6">
+									<label for="inputLastName" class="sr-only">Last Name</label>
+									<input id="inputLastName" class="form-control" name="lastName" placeholder="Last Name" type="text" required>
+								</div>									
+							</div>
+							<div class="form-group">
+								<label for="inputEmail" class="sr-only">Email Address</label>
+								<div class="input-group">
+									<div class="input-group-addon">@</div>
+									<input id="inputEmail" class="form-control" name="email" placeholder="Email Address" type="email" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputUsername" class="sr-only">Username</label>
+								<div class="input-group">
+									<div class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
+									<input id="inputUsername" class="form-control" name="username" placeholder="Username" type="text" required>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-sm-12 col-md-6">
+									<label for="inputPassword" class="sr-only">Password</label>
+									<div class="input-group">
+										<div class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+										<input id="inputPassword" class="form-control" name="password" placeholder="Password" type="password" required>
+									</div>
+								</div>
+								<div class="form-group col-sm-12 col-md-6">
+									<label for="inputConfirmPassword" class="sr-only">Confirm Password</label>
+									<div class="input-group">
+										<div class="input-group-addon"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span></div>
+										<input id="inputConfirmPassword" class="form-control" name="passwordConfirm" placeholder="Confirm Password" type="password" required>
+									</div>
+								</div>
+							</div>
+							<div align='center'>
+								<input class="btn btn-primary btn-lg" value="Sign me up!" type="submit"/>
+							</div>
+						</form>
+					</div>
+					<div class="panel-footer"><div align='center' id="user"><a href="login.html">Have an account? Log in!</a></div></div>
+				</div>
+			</div>
+		</div>
+		
         <hr>
 
         <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>&copy; Community Fund 2015</p>
                 </div>
             </div>
         </footer>
