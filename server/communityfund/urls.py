@@ -3,6 +3,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from communityfund import settings
+from django.views.generic import RedirectView
 
 admin.autodiscover()
 
@@ -14,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^$', 'home.views.index'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^search/$', 'search.views.echo'),
+    url(r'^index.html', RedirectView.as_view(url='/')),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_URL)
 urlpatterns += staticfiles_urlpatterns()
 
