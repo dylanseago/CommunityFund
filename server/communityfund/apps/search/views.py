@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.http import require_http_methods
 
@@ -5,4 +6,5 @@ from django.views.decorators.http import require_http_methods
 def echo(request):
 	html = "<html><body>echo_msg: %s.</body></html>" % request.GET.get('q', '')
 	return HttpResponse(html)
+
 

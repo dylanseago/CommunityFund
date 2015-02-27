@@ -8,5 +8,5 @@ urlpatterns = patterns('',
     
     url(r'^$', 'home.views.index'),
     url(r'^admin/', include(admin.site.urls)),
-    #url(r'^search/$', 'search.views.echo'),
+    url(r'^search/$', 'search.views.echo'),
 )
