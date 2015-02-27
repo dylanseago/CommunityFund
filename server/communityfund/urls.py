@@ -14,4 +14,7 @@ urlpatterns = patterns('',
     url(r'^$', 'home.views.index'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^search/$', 'search.views.echo'),
-)
+) + static(settings.STATIC_URL, document_root=settings.STATIC_URL)
+urlpatterns += staticfiles_urlpatterns()
+
+
