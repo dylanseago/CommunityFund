@@ -7,6 +7,6 @@ if [ $? -ne 1]; then
 	MSG=$1
 fi
 
-git commit -m $MSG
+git commit -m '$MSG'
 git push
 
