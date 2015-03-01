@@ -1,5 +1,5 @@
 git pull
-git add * -f -A
+git add * -A
 git commit
 git push
 
