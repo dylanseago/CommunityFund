@@ -1,4 +1,4 @@
 git pull
-git add * -f -A
+git add * -A
 git commit -m "."
 git push
