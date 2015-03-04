@@ -6,19 +6,17 @@ from search.models import Project, User
 
 @require_http_methods(["GET",])
 def echo(request):
-	#project=set_Project(pID="0", initiator="0", name="test", goal="test", description="t", timeToFund="10:00:00")
-	#project=get_Project(project.objects.values('initiator'), project.objects.values('name'))
-	#html = "<html><body>echo_msg: %s.</body></html>" % request.GET.get('q', '')
-	#user=User.get_User(uID=0)
+	html="Search keyword: " + str(request.GET.get('q', '')) + "<br>"
 	project=Project.get_Project(name=request.GET.get('q', ''))
-	html=simple_textify(project, "<br>")
-	user=User.get_User(uID=0)
-	html+=simple_textify(user, "<br>")
+	html+=simple_textify(project, "<br>")
 	return HttpResponse(html)
 
+@require_http_methods(["GET",])
+def project_result(request):
+	return True
 
 def simple_textify(obj, seperate_str=None):
-	temp = []
+	temp = [seperate_str]
 	if type(obj) == query.QuerySet:
 		for items in obj:
 			temp.append(items.__str__())
@@ -26,5 +24,5 @@ def simple_textify(obj, seperate_str=None):
 	else:
 		temp.append(obj.__str__())
 		temp.append(seperate_str)
-	return temp
+	return str(temp)+seperate_str
 

@@ -35,7 +35,10 @@ class User(models.Model):
 		user=[]
 		if (uID == None):
 			return None
-		user=User.objects.get(uID=uID)
+		try:
+			user=User.objects.get(uID=uID)
+		except User.DoesNotExist:
+			return None
 		return user
 
 	@staticmethod
