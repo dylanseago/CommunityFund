@@ -1,5 +1,6 @@
 from django.db.models import query
-from django.shortcuts import render
+from django.template import Template, Context
+from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
 from django.views.decorators.http import require_http_methods
 from search.models import Project, User
@@ -13,7 +14,9 @@ def echo(request):
 
 @require_http_methods(["GET",])
 def project_result(request):
-	return True
+	search_projects=Project.get_Project(name=request.GET.get('q', ''))
+	return render_to_response('projects.html',{"search_projects":search_projects},content_type="text/html")
+
 
 def simple_textify(obj, seperate_str=None):
 	temp = [seperate_str]
@@ -24,5 +27,8 @@ def simple_textify(obj, seperate_str=None):
 	else:
 		temp.append(obj.__str__())
 		temp.append(seperate_str)
-	return str(temp)+seperate_str
+	if seperate_str == None:
+		return str(temp)
+	else:
+		return str(temp)+seperate_str
 
