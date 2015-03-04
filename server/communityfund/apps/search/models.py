@@ -11,12 +11,22 @@ class User(models.Model):
 	def create(cls, uID, firstName, lastName, email, rating):
 		try:
 			user=cls(uID=uID, firstName=firstName, lastName=lastName, email=email, rating=rating)
+			user.save()
 		except:
 			return None
 		return user
 
-	def update_User(uObj,test):
-		return True
+	def update_User(uObj, uID, firstName, lastName, email, rating):
+		uObj.uID=uID
+		uObj.firstName=firstName
+		uObj.lastName=lastName
+		uObj.email=email
+		uObj.rating=rating
+		try:
+			uObj.save()
+		except:
+			return None
+		return uObj
 
 	@staticmethod
 	def get_User(uID=None, firstName=None, lastName=None, email=None, rating=None):
@@ -35,10 +45,10 @@ class User(models.Model):
 
 
 	def __unicode__(self):
-		return u'%s %s %s' %(self.uID, self.firstName, self.lastName)
+		return u'%s %s %s %s %s' %(self.uID, self.firstName, self.lastName, self.email, self.rating)
 
 	def __str__(self):
-		return '%s %s %s' %(self.uID, self.firstName, self.lastName)
+		return '%s %s %s %s %s' %(self.uID, self.firstName, self.lastName, self.email, self.rating)
 
 
 class Project(models.Model):
@@ -65,7 +75,8 @@ class Project(models.Model):
 		project=[]
 		try:
 			if (name):
-				project=Project.objects.get(name=name)
+				project=Project.objects.filter(name__contains=name)
+				#project=Project.objects.get(name=name)
 			else:
 				project=Project.objects.get(initiator=initiator)
 		except Project.DoesNotExist:
@@ -90,9 +101,9 @@ class Project(models.Model):
 		return project
 
 	def __unicode__(self):
-		return u'%s %s %s' %(self.pID, self.initiator, self.name)
+		return u'%s %s %s %s %s' %(self.pID, self.initiator, self.name, self.goal, self.timeToFund)
 
 	def __str__(self):
-		return '%s %s %s' %(self.pID, self.initiator, self.name)
+		return '%s %s %s %s %s' %(self.pID, self.initiator, self.name, self.goal, self.timeToFund)
 
 
