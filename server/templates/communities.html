@@ -77,86 +77,49 @@
 
     <!-- Page Content -->
     <div class="container">
-
-        <!-- Page Heading/Breadcrumbs -->
+    
+            <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Project Name
-                    <small><a href="community.html">Community Name</a></small>
-                </h1>
+                <h1 class="page-header">Communities</h1>
             </div>
         </div>
-        <!-- /.row -->
-
-        <!-- Project Row -->
+        
+        <!-- Portfolio Section -->
         <div class="row">
-
-            <div class="col-md-8">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    </ol>
-
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <img class="img-responsive" src="http://placehold.it/750x500" alt="">
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive" src="http://placehold.it/750x500" alt="">
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive" src="http://placehold.it/750x500" alt="">
-                        </div>
-                    </div>
-
-                    <!-- Controls -->
-                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <h3>Project Description</h3>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-							<div class="progress">
-								<div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100" style="width: 22%; min-width: 2em;">
-									22%
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<p class="text-left"><strong>$74,529</strong></p>
-								</div>
-								<div class="col-md-6">
-									<p class="text-right">14 days left</p>
-								</div>
-							</div>
-							<div class = "row">
-								<a href="user.html">
-								<div class = "col-md-4">
-                        					<img class="media-object" src="http://placehold.it/64x64" alt="">
-								</a>
-								</div>
-                    						<div class="col-md-8">
-                						<h4>Project initiator Name</h4>
-                						<div class = "col-md-6"><a href="user.html"><h5>View my profile</h5></a></div>
-   								<div class = "col-md-6"><a href="#"><h5>Contact me</h5></a></div>
-   								</div>
-                    					</div>
-							<a class="btn btn-primary" href="#">Fund this Project</i></a>
-                    					<div class = "pull-right"><h4>Rate this Project</h4></div>
-                    					<div class="rating"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div>
-
-            </div>
-
+		    <div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<a href="community.html">
+						<img src="http://placehold.it/700x450&text=Community+Thumbnail" alt="Community Thumbnail">
+						<div class="caption">
+							<h3>Community 1</h3>
+							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		    <div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<a href="community.html">
+						<img src="http://placehold.it/700x450&text=Community+Thumbnail" alt="Community Thumbnail">
+						<div class="caption">
+							<h3>Community 2</h3>
+							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		    <div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<a href="community.html">
+						<img src="http://placehold.it/700x450&text=Community+Thumbnail" alt="Community Thumbnail">
+						<div class="caption">
+							<h3>Community 3</h3>
+							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+						</div>
+					</a>
+				</div>
+			</div>
         </div>
         <!-- /.row -->
 
@@ -179,6 +142,13 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
 
 </body>
 
