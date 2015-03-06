@@ -1,1 +1,1 @@
-python ../../manage.py startapp communityfund/apps/$1
+python manage.py startapp communityfund/apps/$1
