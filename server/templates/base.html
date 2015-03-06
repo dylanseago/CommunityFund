@@ -1,3 +1,5 @@
+{# Global variables #}
+{% with SITE_NAME="Community Fund" %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The crowd funding and social networking platform.">
 
-  <title>{% block title %}Community Fund{% endblock title %}</title>
+  <title>{% block title %}{% block subtitle %}{% endblock subtitle %} - {{ SITE_NAME }}{% endblock title %}</title>
 
   {% load static %}
   <!-- Bootstrap Core CSS -->
@@ -106,7 +108,6 @@
 <script src='{% static "js/bootstrap.min.js" %}'></script>
 
 {% block scripts %}{% endblock scripts %}
-
 </body>
-
 </html>
+{% endwith %}
