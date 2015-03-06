@@ -1,6 +1,5 @@
 from django.conf.urls import patterns, url
-
-from communityfund.apps.home import views
+from . import views
 
 
 urlpatterns = patterns('',

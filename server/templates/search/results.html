@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block subtitle %}Search Results{% endblock subtitle %}
+
+{% block content %}
+  <!-- Page Heading -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Results</h1>
+    </div>
+  </div>
+
+  <h2>Projects</h2>
+
+  <!-- Projects Section -->
+  <div class="row">
+    {% for project in projects|slice:":3" %}
+      <div class="col-sm-6 col-md-4">
+        {% include "home/fragments/project_card.html" %}
+      </div>
+
+      {# If no projects were found #}
+      {% empty %}
+      <div class="col-lg-12">
+        <p><i>No projects were found.</i></p>
+      </div>
+    {% endfor %}
+  </div>
+  <!-- /.row -->
+
+  <h2>Communities</h2>
+
+  <!-- Communities Section -->
+  <div class="row">
+    {% for community in communities|slice:":3" %}
+      <div class="col-sm-6 col-md-4">
+        {% include "home/fragments/community_card.html" %}
+      </div>
+      {% if forloop.counter|divisibleby:3 %}
+        </div>
+        <div class="row">
+      {% endif %}
+
+      {# If no communities were found #}
+      {% empty %}
+      <div class="col-lg-12">
+        <p><i>No communities were found.</i></p>
+      </div>
+    {% endfor %}
+    </div>
+  <!-- /.row -->
+{% endblock content %}

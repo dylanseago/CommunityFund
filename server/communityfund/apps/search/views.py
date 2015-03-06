@@ -4,6 +4,7 @@ from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
 from django.views.decorators.http import require_http_methods
 from communityfund.apps.search.models import Project, User
+from communityfund import placeholder
 
 
 @require_http_methods(["GET"])
@@ -15,9 +16,12 @@ def echo(request):
 
 
 @require_http_methods(["GET"])
-def project_result(request):
-    search_projects = Project.get_Project(name=request.GET.get('q', ''))
-    return render_to_response('home/projects.html', {"search_projects": search_projects}, content_type="text/html")
+def results(request):
+    #search_projects = Project.get_Project(name=request.GET.get('q', ''))
+    return render(request, 'search/results.html', {
+        "projects": [placeholder.project(i) for i in range(10)],
+        'communities': [placeholder.community(i) for i in range(10)]
+    })
 
 
 def simple_textify(obj, seperate_str=None):
