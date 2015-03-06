@@ -66,8 +66,7 @@ class Project(models.Model):
     @classmethod
     def create(cls, pID, initiator, name, goal, description, timeToFund):
         try:
-            project = cls(pID=pID, initiator=initiator, name=name, goal=goal, description=description,
-                          timeToFund=timeToFund)
+            project = cls(pID=pID, initiator=initiator, name=name, goal=goal, description=description, timeToFund=timeToFund)
             project.save()
         except:
             return None

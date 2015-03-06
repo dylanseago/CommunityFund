@@ -15,6 +15,6 @@ class Migration(migrations.Migration):
             model_name='project',
             name='initiator',
             field=models.ForeignKey(to='search.User'),
-            preserve_default=True,
+            # preserve_default=True,
         ),
     ]
