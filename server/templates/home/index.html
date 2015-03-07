@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ SITE_NAME }}{% endblock title %}
-
 {% block scripts %}
   <!-- Script to Activate the Carousel -->
   <script>
@@ -11,7 +9,7 @@
   </script>
 {% endblock scripts %}
 
-{% block header %}
+{% block beforecontent %}
   <!-- Carousel -->
   <div id="myCarousel" class="carousel slide">
     <!-- Indicators -->
@@ -65,18 +63,13 @@
       <span class="icon-next"></span>
     </a>
   </div>
-{% endblock header %}
+{% endblock beforecontent %}
 
 {% block content %}
-  <div class="row">
-    <!-- Trending Projects Header -->
-    <div class="col-lg-12">
-      <h1 class="page-header">
-        Trending Projects
-      </h1>
-    </div>
 
-    <!-- Trending Projects Section -->
+  <!-- Trending Projects Section -->
+  <h2>Trending Projects</h2>
+  <div class="row">
     {% for project in projects|slice:":3" %}
       <div class="col-sm-6 col-md-4">
         {% include 'home/fragments/project_card.html' %}
@@ -85,11 +78,9 @@
   </div>
   <!-- /.row -->
 
-  <!-- Portfolio Section -->
+  <!-- Trending Communities Section -->
+  <h2>Trending Communities</h2>
   <div class="row">
-    <div class="col-lg-12">
-      <h2 class="page-header">Trending Communities</h2>
-    </div>
     {% for community in communities|slice:":3" %}
       <div class="col-sm-6 col-md-4">
         {% include 'home/fragments/community_card.html' %}

@@ -10,6 +10,9 @@ def index(request):
         'communities': [placeholder.community(i) for i in range(10)],
     })
 
+def about(request):
+    return render(request, 'home/about.html')
+
 
 def projects(request):
     # TODO: Replace placeholders with database values
