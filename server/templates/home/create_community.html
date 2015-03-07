@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block subtitle %}Create a Community{% endblock subtitle %}
+
+{% block content %}
+  <form action="{% url 'create_community' %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Create" class="btn btn-primary btn-lg"/>
+  </form>
+{% endblock content %}

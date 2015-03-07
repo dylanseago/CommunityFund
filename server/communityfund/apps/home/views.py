@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from communityfund import placeholder
+from django.http import HttpResponseRedirect
 
 
 def index(request):
@@ -9,6 +10,7 @@ def index(request):
         'projects': [placeholder.project(i) for i in range(10)],
         'communities': [placeholder.community(i) for i in range(10)],
     })
+
 
 def about(request):
     return render(request, 'home/about.html')
@@ -29,14 +31,25 @@ def communities(request):
 
 
 @login_required
-def profile(request):
-    return user(request, 0)
+def create_community(request):
+    if request.method == 'POST':
+        return HttpResponseRedirect('/')
+    else:
+        form = {}
+        return render(request, 'home/create_community.html', {
+            'community_form': form,
+        })
 
 
-def community(request, community_id):
+@login_required
+def create_project(request):
+    return HttpResponseRedirect('/')
+
+
+def user(request, user_id):
     # TODO: Replace placeholder with database value
-    return render(request, 'home/community.html', {
-        'community': placeholder.community(community_id),
+    return render(request, 'home/user.html', {
+        'user_profile': placeholder.user(user_id),
     })
 
 
@@ -47,8 +60,8 @@ def project(request, project_id):
     })
 
 
-def user(request, user_id):
+def community(request, community_id):
     # TODO: Replace placeholder with database value
-    return render(request, 'home/user.html', {
-        'user': placeholder.user(user_id),
+    return render(request, 'home/community.html', {
+        'community': placeholder.community(community_id),
     })

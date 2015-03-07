@@ -10,7 +10,8 @@
           <h1 class="panel-title">Login</h1>
         </div>
         <div class="panel-body">
-          <form id="formLogin" role="form">
+          <form id="formLogin" method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
             <div class="form-group">
               <label for="inputUsername" class="sr-only">Username</label>
 
@@ -47,7 +48,7 @@
           </form>
         </div>
         <div class="panel-footer">
-          <div align='center' id="new-user"><a href="register.html">New user? Sign up!</a></div>
+          <div align='center' id="new-user"><a href="signup.html">New user? Sign up!</a></div>
         </div>
       </div>
     </div>
