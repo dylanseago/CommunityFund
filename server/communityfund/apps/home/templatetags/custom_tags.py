@@ -1,7 +1,7 @@
 from django.template import Library
 import locale
 
-locale.setlocale(locale.LC_ALL, '')
+locale.setlocale(locale.LC_ALL, 'en_CA.UTF-8')
 register = Library()
 
 
