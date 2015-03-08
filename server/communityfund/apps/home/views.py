@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from communityfund.apps.home.models import Project
 from communityfund import placeholder
 from django.http import HttpResponseRedirect
 
@@ -54,9 +55,9 @@ def user(request, user_id):
 
 
 def project(request, project_id):
-    # TODO: Replace placeholder with database value
+    p = get_object_or_404(Project, pk=project_id)
     return render(request, 'home/project.html', {
-        'project': placeholder.project(project_id),
+        'project': p,
     })
 
 

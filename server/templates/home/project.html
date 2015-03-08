@@ -1,14 +1,24 @@
 {% extends "base.html" %}
 {% load custom_tags %}
+{% load static %}
 
 {% block subtitle %}{{ project.name }}{% endblock subtitle %}
 
+{% block css %}
+  <link href="{% static 'css/star-rating.min.css' %}" rel="stylesheet"/>
+{% endblock css %}
+
 {% block scripts %}
-  <!-- Script to Activate the Carousel -->
+  {# Script for ratings #}
+  <script type="application/javascript" src="{% static 'js/star-rating.min.js' %}"></script>
+
+  {# Script to activate the carousel #}
   <script>
-    $('.carousel').carousel({
-      interval: 5000 //changes the speed
-    })
+    $(document).ready(function () {
+      $('.carousel').carousel({
+        interval: 5000 //changes the speed
+      });
+    });
   </script>
 {% endblock scripts %}
 
@@ -53,6 +63,14 @@
     <!-- Project Description -->
     <div class="col-md-4">
       <p>{{ project.description }}</p>
+      <label for="project_rating" class="sr-only">Project Rating</label>
+      <input id="project_rating" type="number" class="rating"
+             min=0 max=5 step=1
+             data-size="xs"
+             data-show-clear="false"
+             data-show-caption="false"
+             data-glyphicon="false"
+             data-rating-class="rating-fa">
 
       <div class="progress">
         <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
@@ -69,24 +87,11 @@
           <p class="text-right">14 days left</p>
         </div>
       </div>
+
       <div class="row">
-        <div class="col-md-4">
-          <a href="{% url 'user' 0 %}">
-            <img class="media-object" src="http://placehold.it/64x64" alt="">
-          </a>
+        <div class="col-lg-12">
+          <a class="btn btn-primary" href="#">Fund this Project</a>
         </div>
-        <div class="col-md-8">
-          <h4>Project initiator Name</h4>
-
-          <div class="col-md-6"><a href="user.html"><h5>View my profile</h5></a></div>
-          <div class="col-md-6"><a href="#"><h5>Contact me</h5></a></div>
-        </div>
-      </div>
-      <a class="btn btn-primary" href="#">Fund this Project</i></a>
-
-      <div class="pull-right"><h4>Rate this Project</h4>
-
-        <div class="rating"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div>
       </div>
 
     </div>
@@ -94,69 +99,71 @@
   </div>
   <!-- /.row -->
 
-  <!-- Project Communities -->
-  <div class="col-md-12">
-    <h4>Communities</h4>
+  <div class="row" style="margin-top: 1em;">
+    <div class="col-lg-4">
+      <div class="panel panel-default" style="margin-bottom: 0;">
+        <div class="media panel-body">
+          <div class="media-left">
+            <a href="{% url 'user' project.initiator_id %}">
+              <img class="media-object" src="http://placehold.it/64x64" alt="User profile picture">
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading ellipsis">
+              <a href="{% url 'user' project.initiator_id %}">{{ project.initiator.get_full_name }}</a>
+              <span class="fa fa-user pull-right"></span>
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="panel panel-default" style="margin-bottom: 0;">
+        <div class="media panel-body">
+          <div class="media-left">
+            <a href="{% url 'community' project.community_id %}">
+              <img class="media-object" src="http://placehold.it/64x64" alt="User profile picture">
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading ellipsis">
+              <a href="{% url 'community' project.community_id %}">{{ project.community.name }}</a>
+              <span class="fa fa-users pull-right"></span>
+            </h4>
 
-    <div class="row">
-      <div class="col-md-2">
-        <a class="Community pic" href="community.html">
-          <img class="media-object" src="http://placehold.it/64x64" alt="">
-          <h5>Community 1</h5></a>
-      </div>
-      <div class="col-md-2">
-        <a class="Community pic" href="community.html">
-          <img class="media-object" src="http://placehold.it/64x64" alt="">
-          <h5>Community 2</h5></a>
-      </div>
-      <div class="col-md-2">
-        <a class="Community pic" href="community.html">
-          <img class="media-object" src="http://placehold.it/64x64" alt="">
-          <h5>Community 3</h5></a>
-      </div>
-      <div class="col-md-2">
-        <a class="Community pic" href="community.html">
-          <img class="media-object" src="http://placehold.it/64x64" alt="">
-          <h5>Community 4</h5></a>
-      </div>
-      <div class="col-md-2">
-        <a class="Community pic" href="community.html">
-          <img class="media-object" src="http://placehold.it/64x64" alt="">
-          <h5>Community 5</h5></a>
-      </div>
-      <div class="col-md-2">
-        <a class="Community pic" href="community.html">
-          <img class="media-object" src="http://placehold.it/64x64" alt="">
-          <h5>Community 6</h5></a>
+            <p style="margin-bottom:0;">{{ project.community.description }}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <!-- /.Project Communities -->
+
+  <hr>
 
   <!-- Project Tabs -->
   <div class="row">
     <div class="col-md-12">
-      <ul id="myTab" class="nav nav-tabs nav-justified">
-        <li class="active"><a href="#service-one" data-toggle="tab"><i class="fa fa-tree"></i> About/Milestones </a>
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#about-tab" data-toggle="tab"><i class="fa fa-tree"></i> About/Milestones </a>
         </li>
-        <li class=""><a href="#service-two" data-toggle="tab"><i class="fa fa-car"></i> Comments <span
+        <li class=""><a href="#comments-tab" data-toggle="tab"><i class="fa fa-car"></i> Comments <span
             class="badge">2</span></a>
         </li>
       </ul>
       <!-- Tabbed Content -->
-      <div id="myTabContent" class="tab-content">
+      <div class="tab-content">
         <!-- About -->
-        <div class="tab-pane fade active in" id="service-one">
+        <div class="tab-pane fade active in" id="about-tab">
           <div class="row">
             <div class="col-lg-12">
-              <h1 class="page-header">About/Milestones</h1>
               Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
               metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in,
               egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies
               vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi
               porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
               dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id
-              dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+              dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget
+              quam.
               Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
               Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
               metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
@@ -166,11 +173,9 @@
         <!-- /.About -->
 
         <!-- Comments -->
-        <div class="tab-pane fade" id="service-two">
+        <div class="tab-pane fade" id="comments-tab">
           <div class="row">
             <div class="col-lg-12">
-              <h4>Leave a Comment:</h4>
-
               <form role="form">
                 <div class="form-group">
                   <textarea class="form-control" rows="3"></textarea>
