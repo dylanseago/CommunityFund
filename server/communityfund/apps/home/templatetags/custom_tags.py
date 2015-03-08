@@ -1,13 +1,16 @@
 from django.template import Library
 import locale
 
-locale.setlocale(locale.LC_ALL, 'en_CA.UTF-8')
+locale.setlocale(locale.LC_ALL, '')
 register = Library()
 
 
 @register.filter(name='currency')
 def currency_filter(value):
-    return locale.currency(value, grouping=True)
+    try:
+        return locale.currency(value, grouping=True)
+    except ValueError:
+        return "${:,.2f}".format(value)
 
 
 @register.filter(name='range')
