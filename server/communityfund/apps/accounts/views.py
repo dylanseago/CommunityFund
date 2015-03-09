@@ -5,4 +5,5 @@ from communityfund.apps.home import views as HomeViews
 
 @login_required
 def profile(request):
-    return HomeViews.user(request, 0)
+    #TODO change to use a profile page instead
+    return HomeViews.user(request, request.user.id)

@@ -3,11 +3,11 @@ from django.template import Template, Context
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
 from django.views.decorators.http import require_http_methods
-from communityfund.apps.home.models import Project, User
+from communityfund.apps.home.models import Project, User, Community
 from communityfund import placeholder
+from django.db.models import Q
 
-
-@require_http_methods(["GET"])
+@require_http_methods(['GET'])
 def echo(request):
     #html = "Search keyword: " + str(request.GET.get('q', '')) + "<br>"
     #project = Project.get_Project(name=request.GET.get('q', ''))
@@ -15,12 +15,16 @@ def echo(request):
     return HttpResponse("")
 
 
-@require_http_methods(["GET"])
+@require_http_methods(['GET'])
 def results(request):
-    #search_projects = Project.get_Project(name=request.GET.get('q', ''))
+    query = request.GET.get('q', '')
+    db_query = Q(name__icontains=query) | Q(description__icontains=query)
+    projects = Project.objects.all().filter(db_query)
+    communities = Community.objects.all().filter(db_query)
     return render(request, 'search/results.html', {
-        "projects": [placeholder.project(i) for i in range(10)],
-        'communities': [placeholder.community(i) for i in range(10)]
+        'projects': projects,
+        'communities': communities,
+        'search_query': query
     })
 
 
