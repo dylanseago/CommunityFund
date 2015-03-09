@@ -12,9 +12,10 @@ class DatedModel(models.Model):
         abstract = True
 
 class Community(DatedModel):
-    creator = models.ForeignKey(User)
+    creator = models.ForeignKey(User, related_name="communities_created")
     name = models.TextField(max_length=100)
     description = models.TextField(max_length=1000)
+    subscribers = models.ManyToManyField(User, related_name="subscriptions")
 
     def get_absolute_url(self):
         return reverse('community', args=[str(self.id)])
@@ -26,10 +27,10 @@ class Community(DatedModel):
         verbose_name_plural = "Communities"
 
 class Project(DatedModel):
-    initiator = models.ForeignKey(User)
-    community = models.ForeignKey(Community)
+    initiator = models.ForeignKey(User, related_name="projects_created")
+    community = models.ForeignKey(Community, related_name="projects")
     name = models.TextField(max_length=100)
-    description = models.TextField(max_length=10000)
+    description = models.TextField(max_length=1000)
     goal = models.PositiveIntegerField()
     amount_funded = models.PositiveIntegerField()
     time_to_fund = models.DateTimeField()
