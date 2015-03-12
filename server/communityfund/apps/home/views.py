@@ -35,7 +35,6 @@ def create_community(request):
     if request.method == 'POST':
         return HttpResponseRedirect('/')
     else:
-        form = {}
         return render(request, 'home/create_community.html', {
             'community_form': form,
         })

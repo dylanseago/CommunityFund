@@ -3,6 +3,7 @@
 {% block subtitle %}Create a Community{% endblock subtitle %}
 
 {% block content %}
+  {% include 'page_heading.html' with heading='Create a Community' %}
   <form action="{% url 'create_community' %}" method="POST">
     {% csrf_token %}
     {{ form }}
