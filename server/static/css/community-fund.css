@@ -1,3 +1,19 @@
+.margin-sm { margin: 0.5em; }
+.margin-md { margin: 1em; }
+.margin-lg { margin: 2em; }
+.margin-top-sm { margin-top: 0.5em; }
+.margin-top-md { margin-top: 1em; }
+.margin-top-lg { margin-top: 2em; }
+.margin-right-sm { margin-right: 0.5em; }
+.margin-right-md { margin-right: 1em; }
+.margin-right-lg { margin-right: 2em; }
+.margin-bottom-sm { margin-bottom: 0.5em; }
+.margin-bottom-md { margin-bottom: 1em; }
+.margin-bottom-lg { margin-bottom: 2em; }
+.margin-left-sm { margin-left: 0.5em; }
+.margin-left-md { margin-left: 1em; }
+.margin-left-lg { margin-left: 2em; }
+
 .ellipsis {
     white-space: nowrap;
     text-overflow: ellipsis;

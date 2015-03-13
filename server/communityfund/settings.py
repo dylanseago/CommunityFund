@@ -7,6 +7,7 @@ https://docs.djangoproject.com/en/1.7/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.7/ref/settings/
 """
+import django.conf.global_settings as DEFAULT_SETTINGS
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
@@ -98,6 +99,12 @@ TEMPLATE_DIRS = (
 
 TEMPLATE_STRING_IF_INVALID = '???unknown???'
 
+TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
+    'django.core.context_processors.request',
+)
+
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'profile'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

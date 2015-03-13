@@ -12,6 +12,15 @@ class BSTextInput(forms.TextInput):
         return bs_render(self, super(BSTextInput, self), name, value, attrs)
 
 
+class BSDecimalInput(forms.NumberInput):
+    """ Bootstrap decimal input widget """
+
+    def __init__(self, label, hide_label=False, prepended=None, appended=None, attrs={}):
+        bs_init(self, super(BSDecimalInput, self), label, hide_label, prepended, appended, attrs)
+
+    def render(self, name, value, attrs=None):
+        return bs_render(self, super(BSDecimalInput, self), name, value, attrs)
+
 class BSPasswordInput(forms.PasswordInput):
     """ Bootstrap password input widget """
 

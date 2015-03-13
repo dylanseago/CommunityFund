@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load custom_tags %}
 
 {% block subtitle %}Login{% endblock subtitle %}
 
@@ -42,13 +43,16 @@
                 <p class="text-right"><a href="#">Forgot Password?</a></p>
               </div>
             </div>
+            {% if request.GET.next %}
+              <input name="next" type="hidden" value="{{ request.GET.next }}"/>
+            {% endif %}
             <div align='center'>
               <input class="btn btn-primary btn-lg" value="Log me in!" type="submit"/>
             </div>
           </form>
         </div>
         <div class="panel-footer">
-          <div align='center' id="new-user"><a href="{% url 'signup' %}">New user? Sign up!</a></div>
+          <div align='center'>{% signup_link 'New user? Sign up!' %}</div>
         </div>
       </div>
     </div>
