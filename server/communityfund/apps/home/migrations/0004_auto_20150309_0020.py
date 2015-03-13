@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
             model_name='community',
             name='subscribers',
             field=models.ManyToManyField(related_name='subscriptions', to=settings.AUTH_USER_MODEL),
-            # preserve_default=True,
+           #  preserve_default=True,
         ),
         migrations.AlterField(
             model_name='project',
