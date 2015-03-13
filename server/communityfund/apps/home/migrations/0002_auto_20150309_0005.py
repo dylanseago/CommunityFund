@@ -17,12 +17,12 @@ class Migration(migrations.Migration):
             model_name='community',
             name='subscribers',
             field=models.ManyToManyField(related_name='home_community_subscribers', to=settings.AUTH_USER_MODEL),
-            preserve_default=True,
+            # preserve_default=True,
         ),
         migrations.AlterField(
             model_name='community',
             name='creator',
             field=models.ForeignKey(related_name='home_community_creator', to=settings.AUTH_USER_MODEL),
-            preserve_default=True,
+            # preserve_default=True,
         ),
     ]
