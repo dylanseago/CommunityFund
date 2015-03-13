@@ -16,12 +16,12 @@ class Migration(migrations.Migration):
             model_name='project',
             name='community',
             field=models.ForeignKey(to='home.Community', related_name='projects'),
-            preserve_default=True,
+            # preserve_default=True,
         ),
         migrations.AlterField(
             model_name='project',
             name='initiator',
             field=models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='initiated'),
-            preserve_default=True,
+            # preserve_default=True,
         ),
     ]
