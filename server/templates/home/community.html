@@ -15,7 +15,10 @@
         <!-- Community Description Content -->
         <p>{{ community.description }}</p>
 
-        <a class="btn btn-primary btn-lg" href="#">Subscribe</a>
+        {% if user.is_authenticated %}
+          <button id="subscribe" class="btn btn-primary btn-lg">Subscribe</button>
+          <!--button id="unsubscribe" class="btn btn-primary btn-lg">Unsubscribe</button-->
+        {% endif %}
       </div>
       <!-- Community Sidebar Widget- subscribed users -->
       <div class="col-md-4">
