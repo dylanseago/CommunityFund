@@ -1,0 +1,317 @@
+{% extends 'base.html' %}
+
+{% block subtitle %}{% endblock subtitle %}
+
+{% block content %}
+  {% include 'page_heading.html' with heading=user.get_full_name %}
+
+  <!-- Image Header -->
+  <div class="row">
+    <div class="col-lg-12">
+      <img class="img-responsive" src="http://placehold.it/1200x300" alt="">
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <!-- Profile Panels -->
+  <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="page-header">About</h2>
+    </div>
+  </div>
+
+  <!-- Profile Tabs -->
+  <div class="row">
+    <!--<div class="col-lg-12">
+        <h2 class="page-header">Service Tabs</h2>
+    </div>-->
+    <div class="col-lg-12">
+
+      <ul id="myTab" class="nav nav-tabs nav-justified">
+        <li class="active"><a href="#service-one" data-toggle="tab"><i class="fa fa-tree"></i> Projects Backed</a>
+        </li>
+        <li class=""><a href="#service-two" data-toggle="tab"><i class="fa fa-car"></i> Projects Initiated</a>
+        </li>
+        <li class=""><a href="#service-three" data-toggle="tab"><i class="fa fa-support"></i> Comments</a>
+        </li>
+        <li class=""><a href="#service-four" data-toggle="tab"><i class="fa fa-database"></i> Ratings</a>
+        </li>
+      </ul>
+
+      <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade active in" id="service-one">
+          <div class="row">
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a href="project.html">
+                  <img src="http://placehold.it/700x450&text=Project+Thumbnail" alt="Project Thumbnail">
+
+                  <div class="caption">
+                    <h3>Project 1</h3>
+
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida
+                      at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                           aria-valuenow="22" aria-valuemin="0" aria-valuemax="100" style="width: 22%; min-width: 2em;">
+                        22%
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p class="text-left"><strong>$74,529</strong></p>
+                      </div>
+                      <div class="col-md-6">
+                        <p class="text-right">14 days left</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a href="project.html">
+                  <img src="http://placehold.it/700x450&text=Project+Thumbnail" alt="Project Thumbnail">
+
+                  <div class="caption">
+                    <h3>Project 2</h3>
+
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida
+                      at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                           aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 1%; min-width: 2em;">
+                        0%
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p class="text-left"><strong>$4</strong></p>
+                      </div>
+                      <div class="col-md-6">
+                        <p class="text-right">30 days left</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a href="project.html">
+                  <img src="http://placehold.it/700x450&text=Project+Thumbnail" alt="Project Thumbnail">
+
+                  <div class="caption">
+                    <h3>Project 3</h3>
+
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida
+                      at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                           aria-valuenow="94" aria-valuemin="0" aria-valuemax="100" style="width: 94%; min-width: 2em;">
+                        94%
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p class="text-left"><strong>$632,572</strong></p>
+                      </div>
+                      <div class="col-md-6">
+                        <p class="text-right">2 days left</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- /.row -->
+        </div>
+        <div class="tab-pane fade" id="service-two">
+          <div class="row">
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a href="project.html">
+                  <img src="http://placehold.it/700x450&text=Project+Thumbnail" alt="Project Thumbnail">
+
+                  <div class="caption">
+                    <h3>Project 4</h3>
+
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida
+                      at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                           aria-valuenow="22" aria-valuemin="0" aria-valuemax="100" style="width: 22%; min-width: 2em;">
+                        22%
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p class="text-left"><strong>$74,529</strong></p>
+                      </div>
+                      <div class="col-md-6">
+                        <p class="text-right">14 days left</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a href="project.html">
+                  <img src="http://placehold.it/700x450&text=Project+Thumbnail" alt="Project Thumbnail">
+
+                  <div class="caption">
+                    <h3>Project 5</h3>
+
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida
+                      at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                           aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 1%; min-width: 2em;">
+                        0%
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p class="text-left"><strong>$4</strong></p>
+                      </div>
+                      <div class="col-md-6">
+                        <p class="text-right">30 days left</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a href="project.html">
+                  <img src="http://placehold.it/700x450&text=Project+Thumbnail" alt="Project Thumbnail">
+
+                  <div class="caption">
+                    <h3>Project 6</h3>
+
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida
+                      at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                           aria-valuenow="94" aria-valuemin="0" aria-valuemax="100" style="width: 94%; min-width: 2em;">
+                        94%
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p class="text-left"><strong>$632,572</strong></p>
+                      </div>
+                      <div class="col-md-6">
+                        <p class="text-right">2 days left</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- /.row -->
+        </div>
+        <div class="tab-pane fade" id="service-three">
+          <h4>Comments</h4>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi
+            esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis
+            impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae
+            illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in.
+            At quia quaerat asperiores.</p>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi
+            esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis
+            impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae
+            illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in.
+            At quia quaerat asperiores.</p>
+        </div>
+        <div class="tab-pane fade" id="service-four">
+          <h4>Ratings</h4>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi
+            esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis
+            impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae
+            illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in.
+            At quia quaerat asperiores.</p>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae repudiandae fugiat illo cupiditate excepturi
+            esse officiis consectetur, laudantium qui voluptatem. Ad necessitatibus velit, accusantium expedita debitis
+            impedit rerum totam id. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus quibusdam recusandae
+            illum, nesciunt, architecto, saepe facere, voluptas eum incidunt dolores magni itaque autem neque velit in.
+            At quia quaerat asperiores.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Service List -->
+  <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="page-header">Communities</h2>
+
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <a href="community.html">
+              <img src="http://placehold.it/700x450&text=Community+Thumbnail" alt="Community Thumbnail">
+
+              <div class="caption">
+                <h3>Community 1</h3>
+
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at
+                  eget
+                  metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <a href="community.html">
+              <img src="http://placehold.it/700x450&text=Community+Thumbnail" alt="Community Thumbnail">
+
+              <div class="caption">
+                <h3>Community 2</h3>
+
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at
+                  eget
+                  metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <a href="community.html">
+              <img src="http://placehold.it/700x450&text=Community+Thumbnail" alt="Community Thumbnail">
+
+              <div class="caption">
+                <h3>Community 3</h3>
+
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at
+                  eget
+                  metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

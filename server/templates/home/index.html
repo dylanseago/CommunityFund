@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ SITE_NAME }}{% endblock title %}
+
+{% block scripts %}
+  <!-- Script to Activate the Carousel -->
+  <script>
+    $('.carousel').carousel({
+      interval: 5000 //changes the speed
+    })
+  </script>
+{% endblock scripts %}
+
+{% block beforecontent %}
+  <!-- Carousel -->
+  <div id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <div class="fill"
+             style="background-image:url(http://c2.staticflickr.com/6/5513/14370075880_55ab9e55b9_h.jpg);"></div>
+        <div class="carousel-caption">
+          <h1>Welcome to Community Fund!</h1>
+          <h4>The crowd funding and social networking platform.</h4>
+
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Explore</a></p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="fill"
+             style="background-image:url(https://s3.amazonaws.com/StartupStockPhotos/20140808_StartupStockPhotos/58.jpg);"></div>
+        <div class="carousel-caption">
+          <h1>Startups</h1>
+
+          <p>Raise money to turn your ideas into reality.</p>
+
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a></p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="fill"
+             style="background-image:url(https://dpqe0zkrjo0ak.cloudfront.net/pfil/4954/pict_original.jpg);"></div>
+        <div class="carousel-caption">
+          <h1>Charity</h1>
+
+          <p>Gather support from your community for a greater cause.</p>
+
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Help Out</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="icon-next"></span>
+    </a>
+  </div>
+{% endblock beforecontent %}
+
+{% block content %}
+
+  <!-- Trending Projects Section -->
+  <h2>Trending Projects</h2>
+  <div class="row">
+    {% for project in projects|slice:":3" %}
+      <div class="col-sm-6 col-md-4">
+        {% include 'home/fragments/project_card.html' %}
+      </div>
+    {% endfor %}
+  </div>
+  <!-- /.row -->
+
+  <!-- Trending Communities Section -->
+  <h2>Trending Communities</h2>
+  <div class="row">
+    {% for community in communities|slice:":3" %}
+      <div class="col-sm-6 col-md-4">
+        {% include 'home/fragments/community_card.html' %}
+      </div>
+    {% endfor %}
+  </div>
+  <!-- /.row -->
+{% endblock content %}

@@ -1,0 +1,12 @@
+<div class="media">
+    <a class="media-left" href="{% url 'user' comment.user_id %}">
+        <img class="media-object" src="http://placehold.it/64x64" alt="">
+    </a>
+    <div class="media-body">
+        <h4 class="media-heading">
+            <a href="{% url 'user' comment.user_id %}">User {{ comment.user_id }}</a>
+            <small>{{ comment.time }}</small>
+        </h4>
+        {{ comment.body }}
+    </div>
+</div>

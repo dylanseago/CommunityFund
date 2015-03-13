@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block subtitle %}Login{% endblock subtitle %}
+
+{% block content %}
+  <div class="row" style="margin-top: 20px">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title">Login</h1>
+        </div>
+        <div class="panel-body">
+          <form id="formLogin" method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="inputUsername" class="sr-only">Username</label>
+
+              <div class="input-group">
+                <div class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
+                <input id="inputUsername" class="form-control" name="username" placeholder="Username" type="text"
+                       required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword" class="sr-only">Password</label>
+
+              <div class="input-group">
+                <div class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+                <input id="inputPassword" class="form-control" name="password" placeholder="Password" type="password"
+                       required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-xs-6">
+                <div class="checkbox-inline">
+                  <label style="font-weight: normal !important">
+                    <input id="inputRememberMe" name="rememberMe" type="checkbox">Remember Me
+                  </label>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <p class="text-right"><a href="#">Forgot Password?</a></p>
+              </div>
+            </div>
+            <div align='center'>
+              <input class="btn btn-primary btn-lg" value="Log me in!" type="submit"/>
+            </div>
+          </form>
+        </div>
+        <div class="panel-footer">
+          <div align='center' id="new-user"><a href="signup.html">New user? Sign up!</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

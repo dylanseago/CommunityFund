@@ -1,0 +1,9 @@
+<div class="thumbnail">
+    <a href="{% url 'community' community.id %}">
+        <img src="http://placehold.it/700x450&text=Community+Thumbnail" alt="Community Thumbnail">
+        <div class="caption">
+            <h3 style="text-overflow: ellipsis;">{{ community.name }}</h3>
+            <p>{{ community.description }}</p>
+        </div>
+    </a>
+</div>

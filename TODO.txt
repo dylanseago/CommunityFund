@@ -1,0 +1,2 @@
+static/css/community-fund.css
+    - Fix ellipsis class. Not working as expected. Affects project_card, community_card and projects templates.
