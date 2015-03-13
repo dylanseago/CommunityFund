@@ -5,6 +5,12 @@
 {% block content %}
   {% include 'page_heading.html' with heading='Projects' %}
 
+  <div class="row" style="margin-bottom: 1em">
+    <div class="col-lg-12">
+      <a class="btn btn-primary" href="#">Add Project</a>
+    </div>
+  </div>
+
   <!-- Projects Section -->
   <div class="row">
     {% for project in projects|slice:":12" %}

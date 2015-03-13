@@ -22,11 +22,11 @@
         <h4>Subscribed Users</h4>
 
         <div class="row">
-          {% for user in community.subscribers|slice:":12" %}
+          {% for user in community.subscribers.all|slice:":12" %}
             <div class="col-md-4">
               <a class="User pic" href="{% url 'user' user.id %}">
                 <img class="media-object" src="http://placehold.it/64x64" alt="">
-                <h5>{{ user.name }}</h5></a>
+                <h5>{{ user.get_full_name }}</h5></a>
             </div>
             {% if forloop.counter|divisibleby:3 %}
               </div>
@@ -43,7 +43,12 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="col-lg-12"><h2 class="page-header">Projects</h2></div>
-      {% for project in community.projects|slice:":3" %}
+      <div class="row" style="margin-bottom: 1em">
+        <div class="col-lg-12">
+          <a class="btn btn-primary" href="#">Add Project</a>
+        </div>
+      </div>
+      {% for project in community.projects.all|slice:":3" %}
         <div class="col-sm-6 col-md-4">
           {% include "home/fragments/project_card.html" %}
         </div>
