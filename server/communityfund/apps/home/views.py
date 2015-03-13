@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404
 from communityfund.apps.home.models import Project, Community
-from communityfund import placeholder
+from communityfund.apps.home.forms import FundingForm
 from django.http import HttpResponseRedirect
 
 
@@ -36,7 +36,7 @@ def create_community(request):
         return HttpResponseRedirect('/')
     else:
         return render(request, 'home/create_community.html', {
-            'community_form': form,
+            'community_form': {},
         })
 
 
@@ -52,8 +52,24 @@ def user(request, user_id):
 
 
 def project(request, project_id):
+    project = get_object_or_404(Project, pk=project_id)
+    user_contribution = None
+    if request.method == 'POST':
+        form = FundingForm(request.user, project, request.POST)
+        if form.is_valid():
+            funding = form.save()
+            user_contribution = funding.amount
+    else:
+        form = FundingForm(request.user, project)
+        fundings = project.fundings.filter(user__id=request.user.id)
+        if len(fundings) != 0:
+            user_contribution = fundings[0].amount
     return render(request, 'home/project.html', {
-        'project': get_object_or_404(Project, pk=project_id),
+        'project': project,
+        'forms': {
+            'funding': form
+        },
+        'user_contribution': user_contribution
     })
 
 

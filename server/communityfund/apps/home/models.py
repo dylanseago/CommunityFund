@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
 from django.core.urlresolvers import reverse
+from django.db.models import Sum
+from communityfund.apps.home.templatetags.custom_tags import currency_filter
 
 
 class DatedModel(models.Model):
@@ -30,10 +32,19 @@ class Project(DatedModel):
     initiator = models.ForeignKey(User, related_name="projects_created")
     community = models.ForeignKey(Community, related_name="projects")
     name = models.TextField(max_length=100)
-    description = models.TextField(max_length=1000)
+    summary = models.TextField(max_length=250)
+    about = models.TextField(max_length=20000)
     goal = models.PositiveIntegerField()
-    amount_funded = models.PositiveIntegerField()
-    time_to_fund = models.DateTimeField()
+    deadline = models.DateTimeField()
+
+    @property
+    def num_funded(self):
+        return self.fundings.count()
+
+    @property
+    def amount_funded(self):
+        amount_funded = self.fundings.all().aggregate(Sum('amount'))['amount__sum']
+        return amount_funded if amount_funded else 0
 
     @property
     def percent_funded(self):
@@ -54,3 +65,11 @@ class Project(DatedModel):
         return self.name
 
 
+class Funding(models.Model):
+    project = models.ForeignKey(Project, related_name="fundings")
+    user = models.ForeignKey(User, related_name="fundings")
+    amount = models.PositiveIntegerField()
+    funded_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return '{} by {}'.format(currency_filter(self.amount), self.user.get_full_name())

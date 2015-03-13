@@ -6,7 +6,7 @@
     <div class="caption">
       <h3 style="text-overflow: ellipsis;">{{ project.name }}</h3>
 
-      <p>{{ project.description }}</p>
+      <p>{{ project.summary }}</p>
 
       <div class="progress">
         <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="{{ project.percent_funded }}"
@@ -19,7 +19,7 @@
           <p class="text-left"><strong>{{ project.amount_funded|currency }}</strong></p>
         </div>
         <div class="col-md-6">
-          <p class="text-right">2 days left</p>
+          <p class="text-right">{{ project.deadline|timeleft }}</p>
         </div>
       </div>
     </div>
